@@ -22,7 +22,7 @@ Coding agents write working code faster than most of us can read it. The cost is
 ## Install
 
 ```
-/plugin marketplace add <github-user>/senior-mentor
+/plugin marketplace add 7ekmaz/senior-mentor
 /plugin install senior-mentor@senior-mentor
 ```
 
