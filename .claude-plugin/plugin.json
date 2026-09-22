@@ -1,0 +1,34 @@
+{
+  "name": "senior-mentor",
+  "version": "0.1.0",
+  "description": "A senior engineer in your terminal: assesses your level (L1 intern to L7 principal) and teaches system design, architecture, concurrency, performance and production engineering interactively, with diagrams, MCQs, build-along crash courses and design-first pairing, so you understand the code instead of just accepting it.",
+  "license": "MIT",
+  "keywords": [
+    "mentor",
+    "learning",
+    "system-design",
+    "architecture",
+    "concurrency",
+    "performance",
+    "production",
+    "teaching"
+  ],
+  "skills": [
+    "./skills/mentor",
+    "./skills/design-partner",
+    "./skills/explain-the-diff",
+    "./skills/assess",
+    "./skills/lesson",
+    "./skills/crash-course",
+    "./skills/code-along",
+    "./skills/system-design",
+    "./skills/production-review",
+    "./skills/pair-debug",
+    "./skills/quiz",
+    "./skills/resources",
+    "./skills/progress"
+  ],
+  "author": {
+    "name": "7ekmaz"
+  }
+}
