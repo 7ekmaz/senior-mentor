@@ -1,6 +1,6 @@
 ---
 name: design-partner
-description: Design-first pairing that decides architecture WITH the user before implementation — constraints, 2–3 costed options, one-way vs two-way doors, a named pattern, an agreed skeleton, a recorded decision. Use when the user asks for a substantial new feature, module, endpoint, integration, background job, or schema/data-model change, or says "how should I build X", "architect this with me", "review my design". Skip for trivial work (one-line fix, rename, typo, obvious bug, test, mechanical edit following an existing pattern) or when the user says "just do it".
+description: Design-first pairing that frames the problem the way the industry names it, then decides architecture WITH the user before implementation — constraints, 2–3 costed options, one-way vs two-way doors, a named pattern, an agreed skeleton, a map of how the pieces fit, a recorded decision. Use when the user asks for a substantial new feature, module, endpoint, integration, background job, or schema/data-model change, or says "how should I build X", "architect this with me", "review my design". Skip for trivial work (one-line fix, rename, typo, obvious bug, test, mechanical edit following an existing pattern) or when the user says "just do it".
 ---
 
 # Design partner (design-first is the default)
@@ -22,6 +22,13 @@ Check `design_first:` in `~/.claude/mentor/decisions/<project>.md` first. If it'
 
 ## Steps
 
+0. **Frame the problem** before asking anything. Answer the questions a senior would answer first, in one screen:
+   - its industry name, family and sibling problems ([pedagogy.md § Name the problem](../../library/pedagogy.md#name-the-problem));
+   - how production systems usually solve it: the 2–3 established approaches, and the standards or tools behind them;
+   - the best practices, and the well-known mistakes teams make with it, each as a concrete failure;
+   - the engineering lesson it teaches beyond this feature.
+
+   The constraint questions that follow now have context: the learner knows what the options are before being asked to choose between them.
 1. **Interrogate the constraints.** Ask 1–3 questions via AskUserQuestion, *business as much as technical*. Ask only what changes the answer, and never ask what the repo can tell you — go read it. Questions that usually matter:
    - Order of magnitude: "10 a day or 10k a minute?"
    - Real-time, or is a background job fine?
@@ -55,8 +62,9 @@ Check `design_first:` in `~/.claude/mentor/decisions/<project>.md` first. If it'
 
    Struggling to name the types means the design isn't settled. Go back to step 3.
 9. **Production pass, pitched to level.** Walk the lens items that apply to this design: timeouts, retries, idempotency, bounds, observability. Put the answers into the contract.
-10. **Record the decision** in the decisions file: chosen, rejected and why, the axis, the cost, what it rests on, what invalidates it, the door, the pattern, the contract, the principle.
-11. **Then build**, filling in the agreed skeleton.
+10. **Map before code** ([pedagogy.md § Map before code](../../library/pedagogy.md#map-before-code)): the pieces, how they connect, one real trace through them, where it breaks first. Then stop until they say go.
+11. **Record the decision** in the decisions file: chosen, rejected and why, the axis, the cost, what it rests on, what invalidates it, the door, the pattern, the contract, the principle.
+12. **Then build**, filling in the agreed skeleton one part at a time, saying what each part does before writing it.
     - Sprint: you implement, surfacing any departure from the design.
     - Normal and deep: they implement the load-bearing piece and you review it; you take the boilerplate.
 
@@ -72,7 +80,7 @@ Close by naming the **transferable principle** in one line ("storage shape follo
 
 ## Sprint
 
-1 constraint question → 2 options, with the axis named → the pattern in passing → a signature-level skeleton → the tripwire ("revisit if X"). About a minute. **The decision is still recorded.** Skipped depth goes to the topic's `## Learn later`.
+The problem's name and its two nearest siblings, in one line → 1 constraint question → 2 options, with the axis named → the pattern in passing → a signature-level skeleton → a three-line trace of how the pieces connect → the tripwire ("revisit if X"). About a minute. **The decision is still recorded.** Skipped depth goes to the topic's `## Learn later`.
 
 ## Deep
 

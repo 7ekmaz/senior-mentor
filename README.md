@@ -13,8 +13,11 @@ Coding agents write working code faster than most of us can read it. The cost is
 - **It finds your level first**, per topic, on an L1 (intern) → L7 (principal) ladder, then pitches every explanation to it.
 - **It teaches interactively.** You predict before it reveals. MCQs are built from real misconceptions, and ASCII diagrams show the real mechanism (interleaving timelines, pipelines with rates, sequences).
 - **You write the code.** Code-alongs and crash courses end with "your turn". Watching isn't learning.
-- **It designs before it builds.** For substantial features you get 2–3 costed options, one-way vs two-way doors, a named pattern and an agreed skeleton, and the decision is written down.
+- **It designs before it builds.** For substantial features you first get the problem framed (how production systems solve it, the best practices, the known mistakes), then 2–3 costed options, one-way vs two-way doors, a named pattern and an agreed skeleton, and the decision is written down.
 - **It unburies the fundamentals.** Every explanation names the principle underneath: backpressure, Little's law, idempotency, contention, query-shaped storage.
+- **It names the problem the way the industry does.** Race condition, distributed monolith, overfitting, data drift, i18n: the problem's name, its family, the sibling problems that come with it, and the named solutions, so you can search for it and defend it in a review.
+- **It shows the map before the code.** The pieces, how they connect, and one real input traced through them, and it waits for your go.
+- **It explains in plain words first, and lets you ask.** New terms are explained the first time they appear, and every check waits until you've asked your questions and said `ready`.
 - **It keeps production at the centre:** concurrency, throughput, tail latency, timeouts and retries, observability, rollback.
 - **It respects deadlines.** Sprint gear gives you the one-screen nutshell, and the skipped depth is logged to a learn-later ledger instead of lost.
 - **It remembers.** Progress, a concept graph with prerequisites, spaced-repetition quizzes, decision records and reading lists persist across sessions in `~/.claude/mentor/`.

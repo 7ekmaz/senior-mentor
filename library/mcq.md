@@ -12,7 +12,9 @@ Every multiple-choice question in every skill follows these rules. Ask via AskUs
 4. **Level-tagged.** Write the question at the concept's level ([levels.md](levels.md)). Placement and promotion challenges pick by level; quizzes pick by weakness.
 5. Keep the correct option's position varied. Keep option lengths similar, so the longest option isn't a giveaway.
 6. **After the answer, one paragraph:** why the right one is right, and what the chosen distractor gets wrong, named as the misconception. If they answered correctly, name the most tempting distractor and why it's wrong.
-7. Write `correct@<date>` or `wrong@<date>` onto the concept and update its status ([formats.md](formats.md#conventions)). A miss triggers root-cause tracing ([formats.md](formats.md#root-cause-tracing)) in quiz and assess modes.
+7. **A question is not an answer.** If the reply is a question ("wait, what does requeue mean?"), or "Other" with a question in it, answer it fully, don't grade it, then ask the same MCQ again. A *predict* MCQ asked before an explanation is a guess: give the paragraph, but record nothing.
+8. **Never fire a checkpoint straight after an explanation.** Open the question window first ([pedagogy.md](pedagogy.md#question-window-before-any-check)). Sprint is the exception.
+9. Write `correct@<date>` or `wrong@<date>` onto the concept and update its status ([formats.md](formats.md#conventions)). A miss triggers root-cause tracing ([formats.md](formats.md#root-cause-tracing)) in quiz and assess modes.
 
 ## Format
 

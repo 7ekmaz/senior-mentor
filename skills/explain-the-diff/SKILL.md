@@ -15,7 +15,7 @@ The last substantial change: `git diff`, or the edits made in this session. The 
 
 ## Shape (normal)
 
-1. **What changed, in 3 sentences.** The behaviour, not a file list.
+1. **What changed, in 3 sentences.** The behaviour, not a file list. Name the problem it solves the way the industry does ([pedagogy.md § Name the problem](../../library/pedagogy.md#name-the-problem)), in one line.
 2. **The map.** A small diagram when the change spans components or has an order of operations ([diagrams.md](../../library/diagrams.md)).
 3. **The load-bearing lines.** Walk the 2–5 lines that matter most. For each one:
    - what it does;
@@ -24,14 +24,14 @@ The last substantial change: `git diff`, or the edits made in this session. The 
 4. **Decisions made silently.** Every choice the agent made without asking: a library, a data shape, sync vs async, an error strategy, a default value. For each one: what it trades away, and whether it's a one-way door. **This is the core of the skill.** Buried decisions are what LLM output hides.
 5. **Production lens, at their level.** What breaks under concurrency, load or failure, with a severity (ship-blocker / fix soon / worth knowing). Be honest about your own code's weaknesses.
 6. **The fundamental** it rests on, in one line.
-7. **One prediction question** via AskUserQuestion, e.g. "if two requests hit this at once, what happens?". A wrong answer → name the misconception in two sentences and mark it `shaky`. It's a teaching moment, not a gate.
+7. **Question window, then one prediction question** ([pedagogy.md](../../library/pedagogy.md#question-window-before-any-check)) via AskUserQuestion, e.g. "if two requests hit this at once, what happens?". A wrong answer → name the misconception in two sentences and mark it `shaky`. It's a teaching moment, not a gate.
 8. Log the concepts touched into the graph (`src: shadow (<context>)`).
 
 ## Shadow mode (`/mentor shadow on|off`)
 
 When shadow is on for a topic (the progress file's `shadow_cadence` is not `quiet`), during normal work:
 
-- Before applying a **substantial** change, explain what you're about to do and why at their level, then ask one prediction question. Trivial edits (renames, imports, formatting) pass silently.
+- Before applying a **substantial** change, show the map ([pedagogy.md § Map before code](../../library/pedagogy.md#map-before-code)): what you're about to do, how the pieces connect, and why, at their level. Then ask one prediction question. Trivial edits (renames, imports, formatting) pass silently.
 - Checks land only at natural checkpoints: before a commit, after a feature works, at a design decision. Never mid-flow.
 - "Quiz me less" / "more" adjusts `shadow_cadence` permanently.
 

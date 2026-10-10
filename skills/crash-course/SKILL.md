@@ -54,7 +54,7 @@ Add the chapter concepts to the graph with their edges, and save `## Crash cours
 
 ## Each chapter: the loop
 
-1. **Narrate intent** (3–5 sentences, spoken style): what we're adding and why, which problem forces it, and the fundamental it teaches.
+1. **Narrate intent** (3–5 sentences, spoken style): what we're adding and why, which problem forces it (by its industry name, [pedagogy.md § Name the problem](../../library/pedagogy.md#name-the-problem)), and the fundamental it teaches. Then the map: the pieces this chapter adds and how they connect to what's already built ([§ Map before code](../../library/pedagogy.md#map-before-code)).
 2. **Pause, predict.** One MCQ: "which design will we need?" or "what will this print?".
 3. **Build live.** Write the code in small chunks, 10–30 lines at a time. After each chunk:
    - explain it the way a presenter would, focusing on the non-obvious lines;

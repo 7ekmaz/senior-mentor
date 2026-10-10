@@ -35,6 +35,8 @@ You can also just ask in plain words: "teach me Docker", "quiz me", "why did you
 | `example` | A new, different example |
 | `deeper` | More detail on how it really works |
 | `why` | Why it exists, and what it costs |
+| any question | Ask it, anytime. Before a test question, I always stop and wait for your questions first |
+| `ready` | I've no more questions: test me now |
 | `check me` | One quick question to test yourself |
 | `next` | Move on |
 | `just tell me` | Skip the questions and give me the answer |

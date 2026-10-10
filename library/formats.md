@@ -26,6 +26,7 @@ last_activity: 2026-08-03
 Knows well: Python, asyncio, gRPC, ML pipelines. Learning RabbitMQ to debug the
 Zenith→Viro run pipeline. Best bridges: asyncio queues, gRPC streaming.
 Modalities: worked numbers + sequence diagrams land; analogies don't.
+Vocabulary: channel, ack, prefetch, exchange, routing key   # terms they use correctly; stop explaining these
 Dropped to D1 twice on delivery semantics — go concrete there.
 
 ## Curriculum

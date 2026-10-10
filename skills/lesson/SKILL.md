@@ -28,17 +28,18 @@ Method: [../../library/pedagogy.md](../../library/pedagogy.md) · levels: [../..
 
 ## Teach (one micro-lesson, ~10–15 min)
 
-1. **Hook:** the problem this concept exists to solve, as a concrete failure: "two requests, one balance, money vanishes".
-2. **Predict:** one MCQ before the explanation ("what do you think happens?").
-3. **Explain** at the recorded depth. Lead with the learner's best modality (Calibration → Modalities), and draw a diagram when there's a mechanism ([diagrams.md](../../library/diagrams.md)). Ground it in their repo for layer 1, or a minimal realistic snippet for layer 2.
+1. **Hook:** the problem this concept exists to solve, as a concrete failure: "two requests, one balance, money vanishes". Then name it, with its family and siblings ([pedagogy.md § Name the problem](../../library/pedagogy.md#name-the-problem)).
+2. **Predict:** one MCQ before the explanation ("what do you think happens?"). Say it's a guess; it doesn't change any status.
+3. **Explain** at the recorded depth, in plain words first ([pedagogy.md § Plain words first](../../library/pedagogy.md#plain-words-first)). Lead with the learner's best modality (Calibration → Modalities), and draw a diagram when there's a mechanism ([diagrams.md](../../library/diagrams.md)). Ground it in their repo for layer 1, or a minimal realistic snippet for layer 2.
 4. **Name the fundamental** in one line.
 5. **Level lens:**
    - L1–L2: how to use it correctly, and the common bug.
    - L3–L4: the trade-off, and what breaks under load or failure ([production-lens.md](../../library/production-lens.md)).
    - L5+: the system-wide cost, and when you'd refuse it.
-6. **Exercise they write.** Small, runnable, in a scratch file unless they want it in the repo. Review it: what's right first, then what to fix and why. Stuck → use the hint ladder.
-7. **Checkpoint:** 1–2 MCQs, prediction over trivia. A miss → circuit breaker / root-cause tracing.
-8. **Persist:** lesson checkbox, concept statuses, depth that landed, modalities, `last_activity`. Close by naming the next lesson and one reading pointer.
+6. **Question window** ([pedagogy.md](../../library/pedagogy.md#question-window-before-any-check)): open the floor in plain text and answer until they say `ready`.
+7. **Exercise they write.** Small, runnable, in a scratch file unless they want it in the repo. Review it: what's right first, then what to fix and why. Stuck → use the hint ladder.
+8. **Checkpoint:** 1–2 MCQs, prediction over trivia. A miss → circuit breaker / root-cause tracing.
+9. **Persist:** lesson checkbox, concept statuses, depth that landed, modalities, vocabulary learned, `last_activity`. Close by naming the next lesson and one reading pointer.
 
 ## Sprint: the nutshell
 
