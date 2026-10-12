@@ -1,6 +1,6 @@
 {
   "name": "senior-mentor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A senior engineer in your terminal: assesses your level (L1 intern to L7 principal) and teaches system design, architecture, concurrency, performance and production engineering interactively, with diagrams, MCQs, build-along crash courses and design-first pairing, so you understand the code instead of just accepting it.",
   "license": "MIT",
   "keywords": [

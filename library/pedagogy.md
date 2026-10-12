@@ -34,6 +34,73 @@ Fundamentals worth naming are things like:
 
 Add each named fundamental to the concept graph so quiz mode tests it later.
 
+## Name the problem
+
+Every field has a name for the problem in front of the learner, and the problems that travel with it. Without the name they can't search for it, read about it, or raise it in a review. Before teaching a concept or designing a feature, name it the way the industry does:
+
+- **The problem's name**, including anti-patterns and smells: "this is a race condition", "this is a distributed monolith", "this is overfitting".
+- **Its family:** the wider area it belongs to, so they can see the map around it.
+- **Sibling problems:** 3–6 problems that come with it, one line each, so none of them arrives as a surprise later.
+- **The named solutions:** the patterns, practices, standards or tools people reach for, and which one fits this situation.
+- **Search terms:** 2–3 phrases that find good material on it.
+
+Start from the symptom the learner describes, because that is how problems arrive. This applies to every field, not one domain:
+
+| Symptom | Problem name | Family | Siblings | Named solutions |
+|---|---|---|---|---|
+| A retried payment charged the card twice | Non-idempotent operation | Delivery semantics (at-least-once vs exactly-once) | duplicate messages, out-of-order delivery, poison messages, retry storms | idempotency keys, dedup table, upsert, outbox pattern |
+| One change forces five services to deploy together | Distributed monolith | Microservice boundaries and coupling | shared database, chatty calls, distributed transactions, API versioning | bounded contexts (DDD), sagas, consumer-driven contracts, strangler fig |
+| Nobody dares touch this file | Spaghetti code / big ball of mud | Technical debt and code smells | god class, shotgun surgery, tight coupling, no tests | refactoring, SOLID, seams, characterization tests |
+| 99% accuracy on the test set, poor in production | Overfitting, or data leakage | Generalization | class imbalance, leakage, train/serve skew, underfitting | cross-validation, regularization, a clean holdout set |
+| The model got worse with no code change | Data drift / concept drift | Model monitoring (MLOps) | training-serving skew, feedback loops, label delay | drift metrics (PSI, KS test), retraining pipelines, shadow deployment |
+| Two users booked the last seat | Race condition / lost update | Concurrency control | write skew, deadlock, phantom reads | isolation levels, optimistic locking, `SELECT … FOR UPDATE`, unique constraints |
+| The page makes 101 database queries | N+1 query | Data-access performance | over-fetching, missing index, chatty APIs | eager loading, batching (DataLoader), joins |
+| The cache expired and the database fell over | Thundering herd / cache stampede | Caching and invalidation | stale reads, hot keys, cache penetration | request coalescing, jittered TTLs, stale-while-revalidate |
+| Tests pass, then fail, with no change | Flaky tests | Test reliability and determinism | order dependence, sleeps instead of waits, shared state | hermetic tests, auto-waiting, test isolation |
+| Changing the id in the URL shows someone else's order | IDOR / broken access control | OWASP Top 10 | missing authz checks, mass assignment, privilege escalation | object-level authorization, deny by default |
+| "Works on my machine" | Environment / configuration drift | Reproducibility | dependency hell, snowflake servers, secrets in code | containers, infrastructure as code, lockfiles |
+| The UI must speak German and Arabic | Internationalization (i18n) | Globalization: i18n + localization (l10n) | locale fallback, plural rules, right-to-left layout, date and number formats, Unicode sorting | CLDR, ICU MessageFormat, gettext, translation workflow |
+
+Scale it to the answer: the full block for a lesson or a feature, one line for a small question ("this is called X; see also Y"). Name only what you're sure of. A made-up term is worse than none. Add the problem and its siblings to the concept graph.
+
+## Plain words first
+
+A term the learner hasn't met is a wall, not a shortcut. The circuit breaker repairs this after confusion; this rule prevents it.
+
+- The first time you use a term that isn't in the topic's `Vocabulary:` (or in "knows well"), explain it in plain words in the same sentence: "idempotent (safe to run twice: the second run changes nothing)". Or say the plain thing and drop the term.
+- That includes terms that feel basic inside the field: side effect, race, serialize, hydrate, backpressure, middleware, regularization.
+- Never stack two new terms in one sentence. Introduce one, use it, then the next.
+- Newness to *this topic* decides it, not career level. An L5 new to frontend still gets "hydration" explained.
+- Once they use a term correctly, or answer a checkpoint on it, add it to `Vocabulary:` and stop explaining it.
+
+## Map before code
+
+Before substantial code is written, by you or by them, show how it works as a whole:
+
+1. **The pieces:** each component or file, with one line on why it exists.
+2. **How they connect:** a diagram of who calls whom and what data crosses each boundary ([diagrams.md](diagrams.md)).
+3. **One real trace:** one concrete input followed through the pieces, in order: "user picks German → cookie set → middleware reads it → loader picks `de.json` → component renders".
+4. **Where it breaks first:** the one or two weak points in that trace.
+5. **Stop:** "Does this picture make sense? Questions before we write it?" No code until they say go.
+
+Then build one part at a time (one file or one logical change), saying what each part does before writing it.
+
+Sprint shrinks this to a three-line trace, with no wait. "Just do it" skips the wait, never the trace.
+
+## Question window before any check
+
+Understanding comes from their questions as much as from yours. After an explanation, and before any checkpoint MCQ:
+
+1. Open the floor in plain text, not AskUserQuestion: "Questions on any part of this before I check you? Say `ready` when you want the question."
+2. Answer each question fully, then reopen the floor. Stay as long as they want.
+3. The checkpoint comes only after `ready`, `check me`, `next`, or a reply with no question in it.
+
+Inside an MCQ, an answer that is a question ("wait, what does requeue mean?") is answered, not graded, and the same MCQ is asked again afterwards. A question is never a wrong answer.
+
+The *predict* MCQ that comes before an explanation is a guess. Say so, and never change a concept's status from it.
+
+Sprint has no window: its single MCQ comes straight after the nutshell.
+
 ## Career level (L1–L7) vs depth (D1–D3)
 
 These are two separate dials.
@@ -59,7 +126,7 @@ The learner can steer any explanation, in any skill. Offer this menu once per se
 | `example` | Another example from a genuinely different domain, failure mode or language they know. Never the first one renamed. |
 | `deeper` | Up one depth level: more mechanism. |
 | `why` | Motivation and trade-offs: what problem forced this into existence, and what it costs. |
-| `check me` | One MCQ right now ([mcq.md](mcq.md)). |
+| `check me`, `ready` | One MCQ right now ([mcq.md](mcq.md)). `ready` also closes the question window. |
 | `more` / `next` | Continue on this / move on. |
 | `just tell me` | Give the answer now, then a two-line recap of how they could have reached it. |
 

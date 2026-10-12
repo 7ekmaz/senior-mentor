@@ -8,7 +8,7 @@
     {
       "name": "senior-mentor",
       "description": "A senior engineer in your terminal: level-aware teaching of system design, architecture, concurrency, performance and production engineering.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "source": "./",
       "author": {
         "name": "7ekmaz"
